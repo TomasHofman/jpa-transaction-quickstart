@@ -39,6 +39,7 @@ public class MyBean {
             }
         } catch (Exception e) {
             LOG.log(Level.SEVERE, "Statement failed", e);
+            e.printStackTrace(writer);
         }
     }
 

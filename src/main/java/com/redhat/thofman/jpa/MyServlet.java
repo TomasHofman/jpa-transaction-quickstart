@@ -56,12 +56,13 @@ public class MyServlet extends HttpServlet {
 
             userTransaction.commit();
         } catch (Exception e) {
+            e.printStackTrace(resp.getWriter());
             try {
                 userTransaction.rollback();
             } catch (SystemException e1) {
                 e1.printStackTrace();
             }
-            throw new ServletException(e);
+//            throw new ServletException(e);
         }
 
         resp.getWriter().close();
